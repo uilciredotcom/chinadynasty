@@ -1,0 +1,352 @@
+/* China Dynasty Restaurant - Mobile-first CSS */
+
+:root {
+  --red: #c41e3a;
+  --dark-red: #8b0000;
+  --gold: #d4af37;
+  --light-gold: #f5e6c8;
+  --cream: #fff8f0;
+  --dark: #1a1a1a;
+  --gray: #4a4a4a;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--dark-red), var(--red));
+  color: var(--white);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--gold);
+}
+
+/* Main content */
+main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+/* Hero / Home */
+.hero {
+  text-align: center;
+  padding: 1.5rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: var(--dark-red);
+  margin-bottom: 0.4rem;
+}
+
+.hero .tagline {
+  color: var(--gray);
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-cards {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--red);
+}
+
+.info-card h2 {
+  font-size: 1.15rem;
+  color: var(--dark-red);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-card p,
+.info-card ul {
+  color: var(--gray);
+  font-size: 0.98rem;
+}
+
+.info-card ul {
+  list-style: none;
+}
+
+.info-card ul li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-card ul li:last-child {
+  border-bottom: none;
+}
+
+.info-card a.phone {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.info-card a.phone:hover {
+  text-decoration: underline;
+}
+
+.address {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Map */
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 0.75rem;
+  aspect-ratio: 16 / 10;
+  max-height: 280px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Menu buttons */
+.menu-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.menu-btn {
+  display: block;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--red), var(--dark-red));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.menu-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(196, 30, 58, 0.35);
+}
+
+.menu-btn.dinner {
+  background: linear-gradient(135deg, #8b4513, #5c2e0a);
+}
+
+/* Menu pages */
+.page-title {
+  text-align: center;
+  color: var(--dark-red);
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.page-note {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.menu-section {
+  margin-bottom: 1.75rem;
+}
+
+.menu-section h2 {
+  background: linear-gradient(90deg, var(--red), var(--dark-red));
+  color: var(--white);
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.3px;
+}
+
+.menu-item {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  align-items: flex-start;
+}
+
+.menu-item .name {
+  font-weight: 600;
+  color: var(--dark);
+  flex: 1 1 60%;
+}
+
+.menu-item .price {
+  font-weight: 700;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+.menu-item .desc {
+  width: 100%;
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-top: 0.15rem;
+}
+
+.spicy {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.section-note {
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-bottom: 0.6rem;
+  padding-left: 0.25rem;
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  color: #ccc;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-cards .map-card {
+    grid-column: 1 / -1;
+  }
+
+  .menu-links {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .info-cards {
+    grid-template-columns: 1fr 1fr 1.2fr;
+  }
+
+  .info-cards .map-card {
+    grid-column: auto;
+  }
+
+  .map-container {
+    max-height: 220px;
+  }
+}
